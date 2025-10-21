@@ -1,0 +1,261 @@
+[
+    {
+        "Id": "cfef5d79f3156842dd4ae5bd47c20c2d242ea88fe48a59af146b730f45ee5f32",
+        "Created": "2025-10-21T20:46:37.614062175Z",
+        "Path": "uv",
+        "Args": [
+            "run",
+            "uvicorn",
+            "src.main:app",
+            "--port",
+            "8000",
+            "--host",
+            "0.0.0.0"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 1026,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2025-10-21T20:46:37.789221175Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:4a896851a450c27c6592a417e89f8791ed0286d64654dd2d69972bf1376b7568",
+        "ResolvConfPath": "/var/lib/docker/containers/cfef5d79f3156842dd4ae5bd47c20c2d242ea88fe48a59af146b730f45ee5f32/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/cfef5d79f3156842dd4ae5bd47c20c2d242ea88fe48a59af146b730f45ee5f32/hostname",
+        "HostsPath": "/var/lib/docker/containers/cfef5d79f3156842dd4ae5bd47c20c2d242ea88fe48a59af146b730f45ee5f32/hosts",
+        "LogPath": "/var/lib/docker/containers/cfef5d79f3156842dd4ae5bd47c20c2d242ea88fe48a59af146b730f45ee5f32/cfef5d79f3156842dd4ae5bd47c20c2d242ea88fe48a59af146b730f45ee5f32-json.log",
+        "Name": "/security-app-hse-backend-1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "security-app-hse_default",
+            "PortBindings": {
+                "8000/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "8000"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "on-failure",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware",
+                "/sys/devices/virtual/powercap"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": null,
+            "Name": "overlayfs"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "cfef5d79f315",
+            "Domainname": "",
+            "User": "appuser",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "8000/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "JWT_SECRET_KEY=",
+                "DB_NAME=notes",
+                "jwt_secret_key=sdfiogjsdgjdfs435683746832u3fhjkafksbKGJBFSJIGBJIGBDGIBGjsdog",
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "PYTHON_VERSION=3.14.0",
+                "PYTHON_SHA256=2299dae542d395ce3883aca00d3c910307cd68e0b2f7336098c8e7b7eee9f3e9"
+            ],
+            "Cmd": [
+                "uv",
+                "run",
+                "uvicorn",
+                "src.main:app",
+                "--port",
+                "8000",
+                "--host",
+                "0.0.0.0"
+            ],
+            "Image": "security-app-hse-backend",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "8c7d5b2ffd56834e1fc4007251cdf6946687112706d1f98df9fb16ccc839a269",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:4a896851a450c27c6592a417e89f8791ed0286d64654dd2d69972bf1376b7568",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "security-app-hse",
+                "com.docker.compose.project.config_files": "/Users/alexanderanisin/Developer/hse/security-app-hse/docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/Users/alexanderanisin/Developer/hse/security-app-hse",
+                "com.docker.compose.service": "backend",
+                "com.docker.compose.version": "2.39.2"
+            }
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "f6af513bf20366e1288f334e58b0f97ef40ea13a653e1653bcc0ba786ebbabe2",
+            "SandboxKey": "/var/run/docker/netns/f6af513bf203",
+            "Ports": {
+                "8000/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "8000"
+                    },
+                    {
+                        "HostIp": "::",
+                        "HostPort": "8000"
+                    }
+                ]
+            },
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "security-app-hse_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "security-app-hse-backend-1",
+                        "backend"
+                    ],
+                    "MacAddress": "be:9c:5e:f9:8f:ca",
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "b3092b82fcdcf7d5b2fbf6cbd72418c0438b63d9cdbcd6a9b0eec8038f0b8bb7",
+                    "EndpointID": "dcd180cf4b18316135d70a9f6ec311c4b83e0e14972fdda538cc9cf442995f93",
+                    "Gateway": "172.18.0.1",
+                    "IPAddress": "172.18.0.2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "security-app-hse-backend-1",
+                        "backend",
+                        "cfef5d79f315"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:a9e6db1cb5b4abac20bfbfb795c31ec7de9e2cffac00f370216297b3ab391681",
+            "size": 2203,
+            "platform": {
+                "architecture": "arm64",
+                "os": "linux"
+            }
+        }
+    }
+]

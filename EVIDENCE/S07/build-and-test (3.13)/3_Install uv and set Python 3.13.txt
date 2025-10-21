@@ -1,0 +1,43 @@
+﻿2025-10-21T20:37:58.9814052Z ##[group]Run astral-sh/setup-uv@v6
+2025-10-21T20:37:58.9814922Z with:
+2025-10-21T20:37:58.9815442Z   python-version: 3.13
+2025-10-21T20:37:58.9816068Z   enable-cache: true
+2025-10-21T20:37:58.9816699Z   activate-environment: false
+2025-10-21T20:37:58.9817899Z   working-directory: /home/runner/work/security-app-hse/security-app-hse
+2025-10-21T20:37:58.9819271Z   server-url: https://github.com
+2025-10-21T20:37:58.9820588Z   github-token: ***
+2025-10-21T20:37:58.9822517Z   cache-dependency-glob: **/*requirements*.txt
+**/*requirements*.in
+**/*constraints*.txt
+**/*constraints*.in
+**/pyproject.toml
+**/uv.lock
+**/*.py.lock
+
+2025-10-21T20:37:58.9824689Z   restore-cache: true
+2025-10-21T20:37:58.9825287Z   save-cache: true
+2025-10-21T20:37:58.9825855Z   prune-cache: true
+2025-10-21T20:37:58.9826497Z   ignore-nothing-to-cache: false
+2025-10-21T20:37:58.9827499Z   ignore-empty-workdir: false
+2025-10-21T20:37:58.9828253Z   add-problem-matchers: true
+2025-10-21T20:37:58.9828961Z ##[endgroup]
+2025-10-21T20:37:59.2204937Z Trying to find version for uv in: /home/runner/work/security-app-hse/security-app-hse/uv.toml
+2025-10-21T20:37:59.2207552Z Could not find file: /home/runner/work/security-app-hse/security-app-hse/uv.toml
+2025-10-21T20:37:59.2210022Z Trying to find version for uv in: /home/runner/work/security-app-hse/security-app-hse/pyproject.toml
+2025-10-21T20:37:59.2220391Z Could not determine uv version from uv.toml or pyproject.toml. Falling back to latest.
+2025-10-21T20:37:59.2222890Z Getting latest version from GitHub API...
+2025-10-21T20:37:59.4628786Z manifest-file not provided, reading from local file.
+2025-10-21T20:37:59.4691817Z manifest-file does not contain version 0.9.5, arch x86_64, platform unknown-linux-gnu. Falling back to GitHub releases.
+2025-10-21T20:37:59.4693890Z Downloading uv from "https://github.com/astral-sh/uv/releases/download/0.9.5/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+2025-10-21T20:37:59.7788834Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/7476db00-d0d6-4919-9c96-c78174f5567a -f /home/runner/work/_temp/09f56d3b-2a16-49d5-bfc1-dcfa012444b2
+2025-10-21T20:38:00.2051279Z Added /home/runner/.local/bin to the path
+2025-10-21T20:38:00.2054649Z Added /opt/hostedtoolcache/uv/0.9.5/x86_64 to the path
+2025-10-21T20:38:00.2058304Z Set UV_PYTHON to 3.13
+2025-10-21T20:38:00.2078763Z Set UV_CACHE_DIR to /home/runner/work/_temp/setup-uv-cache
+2025-10-21T20:38:00.2079537Z Successfully installed uv version 0.9.5
+2025-10-21T20:38:00.2081597Z Searching files using cache dependency glob: /home/runner/work/security-app-hse/security-app-hse/**/*requirements*.txt,/home/runner/work/security-app-hse/security-app-hse/**/*requirements*.in,/home/runner/work/security-app-hse/security-app-hse/**/*constraints*.txt,/home/runner/work/security-app-hse/security-app-hse/**/*constraints*.in,/home/runner/work/security-app-hse/security-app-hse/**/pyproject.toml,/home/runner/work/security-app-hse/security-app-hse/**/uv.lock,/home/runner/work/security-app-hse/security-app-hse/**/*.py.lock
+2025-10-21T20:38:00.2537577Z /home/runner/work/security-app-hse/security-app-hse/pyproject.toml
+2025-10-21T20:38:00.2613925Z /home/runner/work/security-app-hse/security-app-hse/uv.lock
+2025-10-21T20:38:00.2628226Z Found 2 files to hash.
+2025-10-21T20:38:00.2687012Z Trying to restore uv cache from GitHub Actions cache with key: setup-uv-1-x86_64-unknown-linux-gnu-3.13-pruned-b0d4417f6d39d3d9670ea8852e3717e8b9763686c0858fce25ab71575eaffd55
+2025-10-21T20:38:00.3027537Z No GitHub Actions cache found for key: setup-uv-1-x86_64-unknown-linux-gnu-3.13-pruned-b0d4417f6d39d3d9670ea8852e3717e8b9763686c0858fce25ab71575eaffd55

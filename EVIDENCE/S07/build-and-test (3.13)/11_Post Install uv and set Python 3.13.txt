@@ -1,0 +1,9 @@
+﻿2025-10-21T20:38:13.7208419Z Post job cleanup.
+2025-10-21T20:38:13.8780224Z Pruning cache...
+2025-10-21T20:38:13.8820383Z [command]/opt/hostedtoolcache/uv/0.9.5/x86_64/uv cache prune --ci
+2025-10-21T20:38:13.8906568Z Pruning cache at: /home/runner/work/_temp/setup-uv-cache
+2025-10-21T20:38:13.9333724Z Removed 2255 files (87.3MiB)
+2025-10-21T20:38:13.9367551Z Saving cache path: /home/runner/work/_temp/setup-uv-cache
+2025-10-21T20:38:13.9515239Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/security-app-hse/security-app-hse --files-from manifest.txt --use-compress-program zstdmt
+2025-10-21T20:38:14.1985038Z Sent 1684 of 1684 (100.0%), 0.0 MBs/sec
+2025-10-21T20:38:14.2489042Z cache saved with the key: setup-uv-1-x86_64-unknown-linux-gnu-3.13-pruned-b0d4417f6d39d3d9670ea8852e3717e8b9763686c0858fce25ab71575eaffd55

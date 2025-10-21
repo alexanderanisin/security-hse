@@ -1,0 +1,30 @@
+﻿2025-10-21T20:37:57.5164224Z Current runner version: '2.329.0'
+2025-10-21T20:37:57.5188893Z ##[group]Runner Image Provisioner
+2025-10-21T20:37:57.5190033Z Hosted Compute Agent
+2025-10-21T20:37:57.5190582Z Version: 20250912.392
+2025-10-21T20:37:57.5191257Z Commit: d921fda672a98b64f4f82364647e2f10b2267d0b
+2025-10-21T20:37:57.5191992Z Build Date: 2025-09-12T15:23:14Z
+2025-10-21T20:37:57.5192572Z ##[endgroup]
+2025-10-21T20:37:57.5193168Z ##[group]Operating System
+2025-10-21T20:37:57.5193747Z Ubuntu
+2025-10-21T20:37:57.5194195Z 24.04.3
+2025-10-21T20:37:57.5194711Z LTS
+2025-10-21T20:37:57.5195205Z ##[endgroup]
+2025-10-21T20:37:57.5195690Z ##[group]Runner Image
+2025-10-21T20:37:57.5196368Z Image: ubuntu-24.04
+2025-10-21T20:37:57.5196898Z Version: 20250929.60.1
+2025-10-21T20:37:57.5197975Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250929.60/images/ubuntu/Ubuntu2404-Readme.md
+2025-10-21T20:37:57.5199315Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250929.60
+2025-10-21T20:37:57.5200754Z ##[endgroup]
+2025-10-21T20:37:57.5201857Z ##[group]GITHUB_TOKEN Permissions
+2025-10-21T20:37:57.5203726Z Contents: read
+2025-10-21T20:37:57.5204289Z Metadata: read
+2025-10-21T20:37:57.5204858Z Packages: read
+2025-10-21T20:37:57.5205465Z ##[endgroup]
+2025-10-21T20:37:57.5207766Z Secret source: Actions
+2025-10-21T20:37:57.5208858Z Prepare workflow directory
+2025-10-21T20:37:57.5530632Z Prepare all required actions
+2025-10-21T20:37:57.5568083Z Getting action download info
+2025-10-21T20:37:57.8271152Z Download action repository 'actions/checkout@v5' (SHA:08c6903cd8c0fde910a37f88322edcfb5dd907a8)
+2025-10-21T20:37:57.9693291Z Download action repository 'astral-sh/setup-uv@v6' (SHA:d0cc045d04ccac9d8b7881df0226f9e82c39688e)
+2025-10-21T20:37:58.4556715Z Complete job name: build-and-test (3.13)

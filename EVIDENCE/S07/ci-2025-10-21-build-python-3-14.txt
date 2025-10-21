@@ -1,0 +1,398 @@
+﻿2025-10-21T20:37:54.6907747Z Current runner version: '2.329.0'
+2025-10-21T20:37:54.6930239Z ##[group]Runner Image Provisioner
+2025-10-21T20:37:54.6931098Z Hosted Compute Agent
+2025-10-21T20:37:54.6931658Z Version: 20250912.392
+2025-10-21T20:37:54.6932384Z Commit: d921fda672a98b64f4f82364647e2f10b2267d0b
+2025-10-21T20:37:54.6933073Z Build Date: 2025-09-12T15:23:14Z
+2025-10-21T20:37:54.6933682Z ##[endgroup]
+2025-10-21T20:37:54.6934721Z ##[group]Operating System
+2025-10-21T20:37:54.6935270Z Ubuntu
+2025-10-21T20:37:54.6935744Z 24.04.3
+2025-10-21T20:37:54.6936295Z LTS
+2025-10-21T20:37:54.6936741Z ##[endgroup]
+2025-10-21T20:37:54.6937313Z ##[group]Runner Image
+2025-10-21T20:37:54.6937985Z Image: ubuntu-24.04
+2025-10-21T20:37:54.6938516Z Version: 20250929.60.1
+2025-10-21T20:37:54.6939608Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250929.60/images/ubuntu/Ubuntu2404-Readme.md
+2025-10-21T20:37:54.6941300Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250929.60
+2025-10-21T20:37:54.6942384Z ##[endgroup]
+2025-10-21T20:37:54.6943618Z ##[group]GITHUB_TOKEN Permissions
+2025-10-21T20:37:54.6945591Z Contents: read
+2025-10-21T20:37:54.6946300Z Metadata: read
+2025-10-21T20:37:54.6946837Z Packages: read
+2025-10-21T20:37:54.6947349Z ##[endgroup]
+2025-10-21T20:37:54.6949420Z Secret source: Actions
+2025-10-21T20:37:54.6950138Z Prepare workflow directory
+2025-10-21T20:37:54.7263572Z Prepare all required actions
+2025-10-21T20:37:54.7299670Z Getting action download info
+2025-10-21T20:37:55.2151313Z Download action repository 'actions/checkout@v5' (SHA:08c6903cd8c0fde910a37f88322edcfb5dd907a8)
+2025-10-21T20:37:55.3843430Z Download action repository 'astral-sh/setup-uv@v6' (SHA:d0cc045d04ccac9d8b7881df0226f9e82c39688e)
+2025-10-21T20:37:56.1042415Z Complete job name: build-and-test (3.14)
+2025-10-21T20:37:56.1667444Z ##[group]Run actions/checkout@v5
+2025-10-21T20:37:56.1668352Z with:
+2025-10-21T20:37:56.1668856Z   repository: alexanderanisin/security-app-hse
+2025-10-21T20:37:56.1669657Z   token: ***
+2025-10-21T20:37:56.1670114Z   ssh-strict: true
+2025-10-21T20:37:56.1670556Z   ssh-user: git
+2025-10-21T20:37:56.1671020Z   persist-credentials: true
+2025-10-21T20:37:56.1671511Z   clean: true
+2025-10-21T20:37:56.1671954Z   sparse-checkout-cone-mode: true
+2025-10-21T20:37:56.1672485Z   fetch-depth: 1
+2025-10-21T20:37:56.1672910Z   fetch-tags: false
+2025-10-21T20:37:56.1673356Z   show-progress: true
+2025-10-21T20:37:56.1673811Z   lfs: false
+2025-10-21T20:37:56.1674401Z   submodules: false
+2025-10-21T20:37:56.1674866Z   set-safe-directory: true
+2025-10-21T20:37:56.1675631Z ##[endgroup]
+2025-10-21T20:37:56.2601643Z Syncing repository: alexanderanisin/security-app-hse
+2025-10-21T20:37:56.2603674Z ##[group]Getting Git version info
+2025-10-21T20:37:56.2604904Z Working directory is '/home/runner/work/security-app-hse/security-app-hse'
+2025-10-21T20:37:56.2606153Z [command]/usr/bin/git version
+2025-10-21T20:37:56.2651561Z git version 2.51.0
+2025-10-21T20:37:56.2672257Z ##[endgroup]
+2025-10-21T20:37:56.2685998Z Temporarily overriding HOME='/home/runner/work/_temp/aa9abe00-8fc0-498b-87a5-3da970f32fbc' before making global git config changes
+2025-10-21T20:37:56.2687852Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-21T20:37:56.2689909Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/security-app-hse/security-app-hse
+2025-10-21T20:37:56.2724887Z Deleting the contents of '/home/runner/work/security-app-hse/security-app-hse'
+2025-10-21T20:37:56.2728371Z ##[group]Initializing the repository
+2025-10-21T20:37:56.2732748Z [command]/usr/bin/git init /home/runner/work/security-app-hse/security-app-hse
+2025-10-21T20:37:56.2850852Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-10-21T20:37:56.2852715Z hint: is subject to change. To configure the initial branch name to use in all
+2025-10-21T20:37:56.2854465Z hint: of your new repositories, which will suppress this warning, call:
+2025-10-21T20:37:56.2855857Z hint:
+2025-10-21T20:37:56.2857248Z hint: 	git config --global init.defaultBranch <name>
+2025-10-21T20:37:56.2858613Z hint:
+2025-10-21T20:37:56.2859912Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-10-21T20:37:56.2861963Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-10-21T20:37:56.2863725Z hint:
+2025-10-21T20:37:56.2864737Z hint: 	git branch -m <name>
+2025-10-21T20:37:56.2865614Z hint:
+2025-10-21T20:37:56.2866886Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-10-21T20:37:56.2869202Z Initialized empty Git repository in /home/runner/work/security-app-hse/security-app-hse/.git/
+2025-10-21T20:37:56.2872481Z [command]/usr/bin/git remote add origin https://github.com/alexanderanisin/security-app-hse
+2025-10-21T20:37:56.2909920Z ##[endgroup]
+2025-10-21T20:37:56.2911317Z ##[group]Disabling automatic garbage collection
+2025-10-21T20:37:56.2913761Z [command]/usr/bin/git config --local gc.auto 0
+2025-10-21T20:37:56.2942072Z ##[endgroup]
+2025-10-21T20:37:56.2943540Z ##[group]Setting up auth
+2025-10-21T20:37:56.2949187Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-21T20:37:56.2981172Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-21T20:37:56.3342486Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-21T20:37:56.3374150Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-21T20:37:56.3591895Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-10-21T20:37:56.3627483Z ##[endgroup]
+2025-10-21T20:37:56.3628306Z ##[group]Fetching the repository
+2025-10-21T20:37:56.3637746Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +8232ac2c838eb340c38ba26e05609f93fc038590:refs/remotes/origin/main
+2025-10-21T20:37:56.7740432Z From https://github.com/alexanderanisin/security-app-hse
+2025-10-21T20:37:56.7742352Z  * [new ref]         8232ac2c838eb340c38ba26e05609f93fc038590 -> origin/main
+2025-10-21T20:37:56.7775348Z ##[endgroup]
+2025-10-21T20:37:56.7777354Z ##[group]Determining the checkout info
+2025-10-21T20:37:56.7779624Z ##[endgroup]
+2025-10-21T20:37:56.7782962Z [command]/usr/bin/git sparse-checkout disable
+2025-10-21T20:37:56.7827504Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-10-21T20:37:56.7855003Z ##[group]Checking out the ref
+2025-10-21T20:37:56.7858098Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-10-21T20:37:56.7954927Z Switched to a new branch 'main'
+2025-10-21T20:37:56.7957190Z branch 'main' set up to track 'origin/main'.
+2025-10-21T20:37:56.7967022Z ##[endgroup]
+2025-10-21T20:37:56.8002462Z [command]/usr/bin/git log -1 --format=%H
+2025-10-21T20:37:56.8025967Z 8232ac2c838eb340c38ba26e05609f93fc038590
+2025-10-21T20:37:56.8412063Z ##[group]Run astral-sh/setup-uv@v6
+2025-10-21T20:37:56.8413266Z with:
+2025-10-21T20:37:56.8414278Z   python-version: 3.14
+2025-10-21T20:37:56.8415301Z   enable-cache: true
+2025-10-21T20:37:56.8416310Z   activate-environment: false
+2025-10-21T20:37:56.8417906Z   working-directory: /home/runner/work/security-app-hse/security-app-hse
+2025-10-21T20:37:56.8419677Z   server-url: https://github.com
+2025-10-21T20:37:56.8421178Z   github-token: ***
+2025-10-21T20:37:56.8423526Z   cache-dependency-glob: **/*requirements*.txt
+**/*requirements*.in
+**/*constraints*.txt
+**/*constraints*.in
+**/pyproject.toml
+**/uv.lock
+**/*.py.lock
+
+2025-10-21T20:37:56.8426266Z   restore-cache: true
+2025-10-21T20:37:56.8427222Z   save-cache: true
+2025-10-21T20:37:56.8428124Z   prune-cache: true
+2025-10-21T20:37:56.8429070Z   ignore-nothing-to-cache: false
+2025-10-21T20:37:56.8430383Z   ignore-empty-workdir: false
+2025-10-21T20:37:56.8431449Z   add-problem-matchers: true
+2025-10-21T20:37:56.8432454Z ##[endgroup]
+2025-10-21T20:37:57.0825725Z Trying to find version for uv in: /home/runner/work/security-app-hse/security-app-hse/uv.toml
+2025-10-21T20:37:57.0828266Z Could not find file: /home/runner/work/security-app-hse/security-app-hse/uv.toml
+2025-10-21T20:37:57.0830763Z Trying to find version for uv in: /home/runner/work/security-app-hse/security-app-hse/pyproject.toml
+2025-10-21T20:37:57.0840925Z Could not determine uv version from uv.toml or pyproject.toml. Falling back to latest.
+2025-10-21T20:37:57.0843678Z Getting latest version from GitHub API...
+2025-10-21T20:37:57.4419533Z manifest-file not provided, reading from local file.
+2025-10-21T20:37:57.4464834Z manifest-file does not contain version 0.9.5, arch x86_64, platform unknown-linux-gnu. Falling back to GitHub releases.
+2025-10-21T20:37:57.4470327Z Downloading uv from "https://github.com/astral-sh/uv/releases/download/0.9.5/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+2025-10-21T20:37:57.8305105Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/5623c5e3-d4dc-4028-9c0e-756b40ac5ba9 -f /home/runner/work/_temp/8aa62502-26b4-423c-97dc-657860d31da5
+2025-10-21T20:37:58.4822294Z Added /home/runner/.local/bin to the path
+2025-10-21T20:37:58.4826152Z Added /opt/hostedtoolcache/uv/0.9.5/x86_64 to the path
+2025-10-21T20:37:58.4835103Z Set UV_PYTHON to 3.14
+2025-10-21T20:37:58.4860725Z Set UV_CACHE_DIR to /home/runner/work/_temp/setup-uv-cache
+2025-10-21T20:37:58.4861789Z Successfully installed uv version 0.9.5
+2025-10-21T20:37:58.4865881Z Searching files using cache dependency glob: /home/runner/work/security-app-hse/security-app-hse/**/*requirements*.txt,/home/runner/work/security-app-hse/security-app-hse/**/*requirements*.in,/home/runner/work/security-app-hse/security-app-hse/**/*constraints*.txt,/home/runner/work/security-app-hse/security-app-hse/**/*constraints*.in,/home/runner/work/security-app-hse/security-app-hse/**/pyproject.toml,/home/runner/work/security-app-hse/security-app-hse/**/uv.lock,/home/runner/work/security-app-hse/security-app-hse/**/*.py.lock
+2025-10-21T20:37:58.5252355Z /home/runner/work/security-app-hse/security-app-hse/pyproject.toml
+2025-10-21T20:37:58.5415522Z /home/runner/work/security-app-hse/security-app-hse/uv.lock
+2025-10-21T20:37:58.5459395Z Found 2 files to hash.
+2025-10-21T20:37:58.5515609Z Trying to restore uv cache from GitHub Actions cache with key: setup-uv-1-x86_64-unknown-linux-gnu-3.14-pruned-b0d4417f6d39d3d9670ea8852e3717e8b9763686c0858fce25ab71575eaffd55
+2025-10-21T20:37:58.8617242Z No GitHub Actions cache found for key: setup-uv-1-x86_64-unknown-linux-gnu-3.14-pruned-b0d4417f6d39d3d9670ea8852e3717e8b9763686c0858fce25ab71575eaffd55
+2025-10-21T20:37:58.8755450Z ##[group]Run uv sync --locked --all-extras --dev
+2025-10-21T20:37:58.8756246Z [36;1muv sync --locked --all-extras --dev[0m
+2025-10-21T20:37:58.8795566Z shell: /usr/bin/bash -e {0}
+2025-10-21T20:37:58.8795945Z env:
+2025-10-21T20:37:58.8796239Z   UV_PYTHON: 3.14
+2025-10-21T20:37:58.8796637Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-10-21T20:37:58.8797000Z ##[endgroup]
+2025-10-21T20:37:59.2293441Z Downloading cpython-3.14.0-linux-x86_64-gnu (download) (33.0MiB)
+2025-10-21T20:37:59.9965369Z  Downloading cpython-3.14.0-linux-x86_64-gnu (download)
+2025-10-21T20:38:00.1723307Z Using CPython 3.14.0
+2025-10-21T20:38:00.1723859Z Creating virtual environment at: .venv
+2025-10-21T20:38:00.1764702Z Resolved 54 packages in 0.53ms
+2025-10-21T20:38:00.1997873Z Downloading pygments (1.2MiB)
+2025-10-21T20:38:00.2121252Z Downloading ruff (12.8MiB)
+2025-10-21T20:38:00.2138343Z Downloading virtualenv (5.7MiB)
+2025-10-21T20:38:00.2159771Z Downloading pydantic-core (2.0MiB)
+2025-10-21T20:38:00.2165086Z Downloading sqlalchemy (1.8MiB)
+2025-10-21T20:38:00.3866150Z  Downloading pydantic-core
+2025-10-21T20:38:00.5187596Z  Downloading ruff
+2025-10-21T20:38:00.5200781Z  Downloading virtualenv
+2025-10-21T20:38:00.5551986Z  Downloading sqlalchemy
+2025-10-21T20:38:00.5611940Z  Downloading pygments
+2025-10-21T20:38:00.5614418Z Prepared 52 packages in 384ms
+2025-10-21T20:38:00.5936910Z Installed 52 packages in 32ms
+2025-10-21T20:38:00.5937624Z  + aiosqlite==0.21.0
+2025-10-21T20:38:00.5938053Z  + annotated-types==0.7.0
+2025-10-21T20:38:00.5938650Z  + anyio==4.11.0
+2025-10-21T20:38:00.5939097Z  + bcrypt==3.2.0
+2025-10-21T20:38:00.5939545Z  + black==25.9.0
+2025-10-21T20:38:00.5940033Z  + certifi==2025.10.5
+2025-10-21T20:38:00.5940522Z  + cffi==2.0.0
+2025-10-21T20:38:00.5940891Z  + cfgv==3.4.0
+2025-10-21T20:38:00.5941347Z  + click==8.3.0
+2025-10-21T20:38:00.5941782Z  + distlib==0.4.0
+2025-10-21T20:38:00.5942216Z  + ecdsa==0.19.1
+2025-10-21T20:38:00.5942692Z  + fastapi==0.119.0
+2025-10-21T20:38:00.5943181Z  + filelock==3.20.0
+2025-10-21T20:38:00.5943591Z  + greenlet==3.2.4
+2025-10-21T20:38:00.5944221Z  + h11==0.16.0
+2025-10-21T20:38:00.5944676Z  + httpcore==1.0.9
+2025-10-21T20:38:00.5945124Z  + httpx==0.28.1
+2025-10-21T20:38:00.5945624Z  + identify==2.6.15
+2025-10-21T20:38:00.5946065Z  + idna==3.11
+2025-10-21T20:38:00.5946473Z  + iniconfig==2.1.0
+2025-10-21T20:38:00.5946902Z  + isort==7.0.0
+2025-10-21T20:38:00.5947356Z  + mypy-extensions==1.1.0
+2025-10-21T20:38:00.5947865Z  + nodeenv==1.9.1
+2025-10-21T20:38:00.5948292Z  + packaging==25.0
+2025-10-21T20:38:00.5948745Z  + passlib==1.7.4
+2025-10-21T20:38:00.5949201Z  + pathspec==0.12.1
+2025-10-21T20:38:00.5949653Z  + platformdirs==4.5.0
+2025-10-21T20:38:00.5950167Z  + pluggy==1.6.0
+2025-10-21T20:38:00.5950593Z  + pre-commit==4.3.0
+2025-10-21T20:38:00.5951023Z  + pyasn1==0.6.1
+2025-10-21T20:38:00.5951471Z  + pycparser==2.23
+2025-10-21T20:38:00.5951897Z  + pydantic==2.12.0
+2025-10-21T20:38:00.5952339Z  + pydantic-core==2.41.1
+2025-10-21T20:38:00.5952902Z  + pydantic-settings==2.11.0
+2025-10-21T20:38:00.5953383Z  + pygments==2.19.2
+2025-10-21T20:38:00.5953817Z  + pytest==8.4.2
+2025-10-21T20:38:00.5954437Z  + pytest-asyncio==1.2.0
+2025-10-21T20:38:00.5954875Z  + python-dotenv==1.1.1
+2025-10-21T20:38:00.5955411Z  + python-jose==3.5.0
+2025-10-21T20:38:00.5955856Z  + python-multipart==0.0.20
+2025-10-21T20:38:00.5956318Z  + pytokens==0.1.10
+2025-10-21T20:38:00.5956799Z  + pyyaml==6.0.3
+2025-10-21T20:38:00.5957158Z  + rsa==4.9.1
+2025-10-21T20:38:00.5957548Z  + ruff==0.14.0
+2025-10-21T20:38:00.5958072Z  + six==1.17.0
+2025-10-21T20:38:00.5958510Z  + sniffio==1.3.1
+2025-10-21T20:38:00.5958947Z  + sqlalchemy==2.0.44
+2025-10-21T20:38:00.6029230Z  + starlette==0.48.0
+2025-10-21T20:38:00.6029590Z  + typing-extensions==4.15.0
+2025-10-21T20:38:00.6029972Z  + typing-inspection==0.4.2
+2025-10-21T20:38:00.6030357Z  + uvicorn==0.38.0
+2025-10-21T20:38:00.6030718Z  + virtualenv==20.35.3
+2025-10-21T20:38:00.6065662Z ##[group]Run uv run pytest
+2025-10-21T20:38:00.6065936Z [36;1muv run pytest[0m
+2025-10-21T20:38:00.6097686Z shell: /usr/bin/bash -e {0}
+2025-10-21T20:38:00.6097907Z env:
+2025-10-21T20:38:00.6098066Z   UV_PYTHON: 3.14
+2025-10-21T20:38:00.6098302Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-10-21T20:38:00.6098737Z   DB_NAME: ***
+2025-10-21T20:38:00.6099077Z   JWT_SECRET_KEY: ***
+2025-10-21T20:38:00.6099265Z ##[endgroup]
+2025-10-21T20:38:03.4702320Z ============================= test session starts ==============================
+2025-10-21T20:38:03.4703151Z platform linux -- Python 3.14.0, pytest-8.4.2, pluggy-1.6.0
+2025-10-21T20:38:03.4703747Z rootdir: /home/runner/work/security-app-hse/security-app-hse
+2025-10-21T20:38:03.4704681Z configfile: pyproject.toml
+2025-10-21T20:38:03.4705042Z plugins: anyio-4.11.0, asyncio-1.2.0
+2025-10-21T20:38:03.4705779Z asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+2025-10-21T20:38:03.4706421Z collected 7 items
+2025-10-21T20:38:03.4706580Z 
+2025-10-21T20:38:03.5288751Z tests/test_health.py .                                                   [ 14%]
+2025-10-21T20:38:06.6384374Z tests/test_note.py ......                                                [100%]
+2025-10-21T20:38:06.6385288Z 
+2025-10-21T20:38:06.6385467Z =============================== warnings summary ===============================
+2025-10-21T20:38:06.6385888Z src/schemas.py:12
+2025-10-21T20:38:06.6388130Z   /home/runner/work/security-app-hse/security-app-hse/src/schemas.py:12: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+2025-10-21T20:38:06.6390192Z     class User(UserBase):
+2025-10-21T20:38:06.6390447Z 
+2025-10-21T20:38:06.6390783Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2025-10-21T20:38:06.6391518Z ========================= 7 passed, 1 warning in 3.02s =========================
+2025-10-21T20:38:06.8185845Z ##[group]Run docker build . --tag my-app:8232ac2c838eb340c38ba26e05609f93fc038590
+2025-10-21T20:38:06.8186376Z [36;1mdocker build . --tag my-app:8232ac2c838eb340c38ba26e05609f93fc038590[0m
+2025-10-21T20:38:06.8218179Z shell: /usr/bin/bash -e {0}
+2025-10-21T20:38:06.8218409Z env:
+2025-10-21T20:38:06.8218576Z   UV_PYTHON: 3.14
+2025-10-21T20:38:06.8218807Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-10-21T20:38:06.8219082Z ##[endgroup]
+2025-10-21T20:38:07.3101445Z #0 building with "default" instance using docker driver
+2025-10-21T20:38:07.3101767Z 
+2025-10-21T20:38:07.3101924Z #1 [internal] load build definition from Dockerfile
+2025-10-21T20:38:07.3102291Z #1 transferring dockerfile: 394B done
+2025-10-21T20:38:07.3102573Z #1 DONE 0.0s
+2025-10-21T20:38:07.3102700Z 
+2025-10-21T20:38:07.3102872Z #2 [internal] load metadata for ghcr.io/astral-sh/uv:latest
+2025-10-21T20:38:07.5170163Z #2 ...
+2025-10-21T20:38:07.5170435Z 
+2025-10-21T20:38:07.5170732Z #3 [auth] library/python:pull token for registry-1.docker.io
+2025-10-21T20:38:07.5171194Z #3 DONE 0.0s
+2025-10-21T20:38:07.6668393Z 
+2025-10-21T20:38:07.6668814Z #4 [internal] load metadata for docker.io/library/python:3.14-slim
+2025-10-21T20:38:08.0842032Z #4 DONE 0.9s
+2025-10-21T20:38:08.0842214Z 
+2025-10-21T20:38:08.0842394Z #2 [internal] load metadata for ghcr.io/astral-sh/uv:latest
+2025-10-21T20:38:08.2548436Z #2 DONE 1.0s
+2025-10-21T20:38:08.2548716Z 
+2025-10-21T20:38:08.2549154Z #5 [internal] load .dockerignore
+2025-10-21T20:38:08.2549752Z #5 transferring context: 191B done
+2025-10-21T20:38:08.2550113Z #5 DONE 0.0s
+2025-10-21T20:38:08.2550235Z 
+2025-10-21T20:38:08.2550346Z #6 [internal] load build context
+2025-10-21T20:38:08.2550635Z #6 transferring context: 186.35kB done
+2025-10-21T20:38:08.2550928Z #6 DONE 0.0s
+2025-10-21T20:38:08.2551051Z 
+2025-10-21T20:38:08.2551444Z #7 FROM ghcr.io/astral-sh/uv:latest@sha256:f459f6f73a8c4ef5d69f4e6fbbdb8af751d6fa40ec34b39a1ab469acd6e289b7
+2025-10-21T20:38:08.2552367Z #7 resolve ghcr.io/astral-sh/uv:latest@sha256:f459f6f73a8c4ef5d69f4e6fbbdb8af751d6fa40ec34b39a1ab469acd6e289b7 done
+2025-10-21T20:38:08.2553207Z #7 sha256:f459f6f73a8c4ef5d69f4e6fbbdb8af751d6fa40ec34b39a1ab469acd6e289b7 2.19kB / 2.19kB done
+2025-10-21T20:38:08.2554164Z #7 sha256:0f419824ea1810fe2a47af12aef8e8c39eabae8d19c728cd9612d18e17a98d17 669B / 669B done
+2025-10-21T20:38:08.2554906Z #7 sha256:d113707eb731275ee0cdfbb9c115f020876888fa376857bee3f6cc5a471e2f2b 1.30kB / 1.30kB done
+2025-10-21T20:38:08.2555631Z #7 sha256:0daf2b1a974db1a0f3bca91305aba6c54d333d82104cd404c9c58813b6dd4146 0B / 21.82MB 0.1s
+2025-10-21T20:38:08.2556327Z #7 sha256:99df4935c9790c120a2cd9be361f1d2717560ba4c68e6eb037a883bfac214c18 0B / 96B 0.1s
+2025-10-21T20:38:08.3550657Z #7 sha256:0daf2b1a974db1a0f3bca91305aba6c54d333d82104cd404c9c58813b6dd4146 21.82MB / 21.82MB 0.2s
+2025-10-21T20:38:08.3551414Z #7 sha256:99df4935c9790c120a2cd9be361f1d2717560ba4c68e6eb037a883bfac214c18 96B / 96B 0.2s done
+2025-10-21T20:38:08.4633561Z #7 sha256:0daf2b1a974db1a0f3bca91305aba6c54d333d82104cd404c9c58813b6dd4146 21.82MB / 21.82MB 0.2s done
+2025-10-21T20:38:08.4634912Z #7 extracting sha256:0daf2b1a974db1a0f3bca91305aba6c54d333d82104cd404c9c58813b6dd4146 0.1s
+2025-10-21T20:38:08.7452662Z #7 extracting sha256:0daf2b1a974db1a0f3bca91305aba6c54d333d82104cd404c9c58813b6dd4146 0.3s done
+2025-10-21T20:38:08.7454137Z #7 extracting sha256:99df4935c9790c120a2cd9be361f1d2717560ba4c68e6eb037a883bfac214c18 done
+2025-10-21T20:38:08.7454909Z #7 DONE 0.6s
+2025-10-21T20:38:08.7455106Z 
+2025-10-21T20:38:08.7455753Z #8 [stage-0 1/7] FROM docker.io/library/python:3.14-slim@sha256:85c9a39ea0c4d940720080b9c233ff794e6bf461af0661cbc5a7ba7f77af996b
+2025-10-21T20:38:08.7457305Z #8 resolve docker.io/library/python:3.14-slim@sha256:85c9a39ea0c4d940720080b9c233ff794e6bf461af0661cbc5a7ba7f77af996b done
+2025-10-21T20:38:08.7458424Z #8 sha256:85c9a39ea0c4d940720080b9c233ff794e6bf461af0661cbc5a7ba7f77af996b 10.37kB / 10.37kB done
+2025-10-21T20:38:08.7459584Z #8 sha256:db41e1ccaa3b0191472f417077e0e9423727da476c25d1ec27dd8db9e2f79059 1.75kB / 1.75kB done
+2025-10-21T20:38:08.7460411Z #8 sha256:c4fdcd4c8334c24934484d7d0a4ef506210b8e095ab5f60b4930cf751838e312 4.87kB / 4.87kB done
+2025-10-21T20:38:08.7461285Z #8 sha256:38513bd7256313495cdd83b3b0915a633cfa475dc2a07072ab2c8d191020ca5d 11.53MB / 29.78MB 0.5s
+2025-10-21T20:38:08.7462407Z #8 sha256:031242994df8c1b030b9b37cc31bed0908557209d882bc6e60afca2e0c06f617 1.29MB / 1.29MB 0.3s done
+2025-10-21T20:38:08.7463128Z #8 sha256:c996efa345956dc673b33e4f944aa9ebecc835b085f4c7429399f2839c783be3 8.39MB / 12.17MB 0.5s
+2025-10-21T20:38:08.7464245Z #8 sha256:897f73a69795bec26775b3709f253a8f9cb8cba8bcf0ff7ec94fcdb5353df4d8 249B / 249B 0.5s done
+2025-10-21T20:38:08.8552253Z #8 sha256:38513bd7256313495cdd83b3b0915a633cfa475dc2a07072ab2c8d191020ca5d 13.63MB / 29.78MB 0.7s
+2025-10-21T20:38:09.1551731Z #8 sha256:38513bd7256313495cdd83b3b0915a633cfa475dc2a07072ab2c8d191020ca5d 16.78MB / 29.78MB 1.0s
+2025-10-21T20:38:09.4555990Z #8 sha256:38513bd7256313495cdd83b3b0915a633cfa475dc2a07072ab2c8d191020ca5d 20.97MB / 29.78MB 1.3s
+2025-10-21T20:38:09.6548834Z #8 sha256:38513bd7256313495cdd83b3b0915a633cfa475dc2a07072ab2c8d191020ca5d 25.17MB / 29.78MB 1.5s
+2025-10-21T20:38:09.9546879Z #8 sha256:38513bd7256313495cdd83b3b0915a633cfa475dc2a07072ab2c8d191020ca5d 29.78MB / 29.78MB 1.8s done
+2025-10-21T20:38:10.0747306Z #8 extracting sha256:38513bd7256313495cdd83b3b0915a633cfa475dc2a07072ab2c8d191020ca5d 0.1s
+2025-10-21T20:38:10.9526184Z #8 extracting sha256:38513bd7256313495cdd83b3b0915a633cfa475dc2a07072ab2c8d191020ca5d 0.9s done
+2025-10-21T20:38:10.9527104Z #8 extracting sha256:031242994df8c1b030b9b37cc31bed0908557209d882bc6e60afca2e0c06f617 0.1s done
+2025-10-21T20:38:11.1372281Z #8 extracting sha256:c996efa345956dc673b33e4f944aa9ebecc835b085f4c7429399f2839c783be3 0.1s
+2025-10-21T20:38:11.7046148Z #8 extracting sha256:c996efa345956dc673b33e4f944aa9ebecc835b085f4c7429399f2839c783be3 0.5s done
+2025-10-21T20:38:11.7047260Z #8 extracting sha256:897f73a69795bec26775b3709f253a8f9cb8cba8bcf0ff7ec94fcdb5353df4d8 done
+2025-10-21T20:38:11.7047944Z #8 DONE 3.5s
+2025-10-21T20:38:11.7048134Z 
+2025-10-21T20:38:11.7048446Z #9 [stage-0 2/7] COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+2025-10-21T20:38:11.7048999Z #9 DONE 0.1s
+2025-10-21T20:38:11.8757588Z 
+2025-10-21T20:38:11.8758042Z #10 [stage-0 3/7] WORKDIR /app
+2025-10-21T20:38:11.8758399Z #10 DONE 0.0s
+2025-10-21T20:38:11.8758514Z 
+2025-10-21T20:38:11.8758641Z #11 [stage-0 4/7] COPY uv.lock pyproject.toml ./
+2025-10-21T20:38:11.8758919Z #11 DONE 0.0s
+2025-10-21T20:38:11.8759029Z 
+2025-10-21T20:38:11.8759154Z #12 [stage-0 5/7] RUN uv sync --frozen --no-cache
+2025-10-21T20:38:12.0418764Z #12 0.317 Using CPython 3.14.0 interpreter at: /usr/local/bin/python3
+2025-10-21T20:38:12.0419408Z #12 0.317 Creating virtual environment at: .venv
+2025-10-21T20:38:12.2420204Z #12 0.349 Downloading pydantic-core (2.0MiB)
+2025-10-21T20:38:12.2420931Z #12 0.349 Downloading sqlalchemy (1.8MiB)
+2025-10-21T20:38:12.2422074Z #12 0.397  Downloading pydantic-core
+2025-10-21T20:38:12.2422996Z #12 0.517  Downloading sqlalchemy
+2025-10-21T20:38:12.3610586Z #12 0.517 Prepared 28 packages in 195ms
+2025-10-21T20:38:12.3611006Z #12 0.551 Installed 28 packages in 33ms
+2025-10-21T20:38:12.3611272Z #12 0.551  + aiosqlite==0.21.0
+2025-10-21T20:38:12.3611822Z #12 0.551  + annotated-types==0.7.0
+2025-10-21T20:38:12.3612248Z #12 0.551  + anyio==4.11.0
+2025-10-21T20:38:12.3612611Z #12 0.551  + bcrypt==3.2.0
+2025-10-21T20:38:12.3612966Z #12 0.551  + cffi==2.0.0
+2025-10-21T20:38:12.3613327Z #12 0.551  + click==8.3.0
+2025-10-21T20:38:12.3613680Z #12 0.551  + ecdsa==0.19.1
+2025-10-21T20:38:12.3614243Z #12 0.551  + fastapi==0.119.0
+2025-10-21T20:38:12.3614619Z #12 0.552  + greenlet==3.2.4
+2025-10-21T20:38:12.3614971Z #12 0.552  + h11==0.16.0
+2025-10-21T20:38:12.3615281Z #12 0.552  + idna==3.11
+2025-10-21T20:38:12.3615619Z #12 0.552  + passlib==1.7.4
+2025-10-21T20:38:12.3615962Z #12 0.552  + pyasn1==0.6.1
+2025-10-21T20:38:12.3616299Z #12 0.552  + pycparser==2.23
+2025-10-21T20:38:12.3616957Z #12 0.552  + pydantic==2.12.0
+2025-10-21T20:38:12.3617384Z #12 0.552  + pydantic-core==2.41.1
+2025-10-21T20:38:12.3617817Z #12 0.552  + pydantic-settings==2.11.0
+2025-10-21T20:38:12.3618234Z #12 0.552  + python-dotenv==1.1.1
+2025-10-21T20:38:12.3618669Z #12 0.552  + python-jose==3.5.0
+2025-10-21T20:38:12.3619097Z #12 0.552  + python-multipart==0.0.20
+2025-10-21T20:38:12.3619421Z #12 0.552  + rsa==4.9.1
+2025-10-21T20:38:12.3619619Z #12 0.552  + six==1.17.0
+2025-10-21T20:38:12.3619954Z #12 0.552  + sniffio==1.3.1
+2025-10-21T20:38:12.3620309Z #12 0.552  + sqlalchemy==2.0.44
+2025-10-21T20:38:12.3620693Z #12 0.552  + starlette==0.48.0
+2025-10-21T20:38:12.3621103Z #12 0.552  + typing-extensions==4.15.0
+2025-10-21T20:38:12.3621555Z #12 0.552  + typing-inspection==0.4.2
+2025-10-21T20:38:12.3621792Z #12 0.552  + uvicorn==0.38.0
+2025-10-21T20:38:12.3622104Z #12 DONE 0.6s
+2025-10-21T20:38:12.3622287Z 
+2025-10-21T20:38:12.3622373Z #13 [stage-0 6/7] COPY . .
+2025-10-21T20:38:12.3622631Z #13 DONE 0.0s
+2025-10-21T20:38:12.5124125Z 
+2025-10-21T20:38:12.5124834Z #14 [stage-0 7/7] RUN adduser --disabled-password --gecos "" appuser && chown -R appuser:appuser /app
+2025-10-21T20:38:12.5318004Z #14 0.170 usermod: no changes
+2025-10-21T20:38:13.3096727Z #14 DONE 0.9s
+2025-10-21T20:38:13.4619668Z 
+2025-10-21T20:38:13.4620194Z #15 exporting to image
+2025-10-21T20:38:13.4620645Z #15 exporting layers
+2025-10-21T20:38:14.0556417Z #15 exporting layers 0.7s done
+2025-10-21T20:38:14.0798395Z #15 writing image sha256:1adfe5f50dbce04cccf24bfe9e0f2935391ab77607116fc8d1edb3200ace7c04 done
+2025-10-21T20:38:14.0799877Z #15 naming to docker.io/library/my-app:8232ac2c838eb340c38ba26e05609f93fc038590 done
+2025-10-21T20:38:14.0800597Z #15 DONE 0.8s
+2025-10-21T20:38:14.0926062Z Post job cleanup.
+2025-10-21T20:38:14.2488766Z Pruning cache...
+2025-10-21T20:38:14.2529691Z [command]/opt/hostedtoolcache/uv/0.9.5/x86_64/uv cache prune --ci
+2025-10-21T20:38:14.2613371Z Pruning cache at: /home/runner/work/_temp/setup-uv-cache
+2025-10-21T20:38:14.3035956Z Removed 2220 files (78.4MiB)
+2025-10-21T20:38:14.3080384Z Saving cache path: /home/runner/work/_temp/setup-uv-cache
+2025-10-21T20:38:14.3250361Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/security-app-hse/security-app-hse --files-from manifest.txt --use-compress-program zstdmt
+2025-10-21T20:38:14.9116726Z Sent 1640 of 1640 (100.0%), 0.0 MBs/sec
+2025-10-21T20:38:15.0108211Z cache saved with the key: setup-uv-1-x86_64-unknown-linux-gnu-3.14-pruned-b0d4417f6d39d3d9670ea8852e3717e8b9763686c0858fce25ab71575eaffd55
+2025-10-21T20:38:15.0215049Z Post job cleanup.
+2025-10-21T20:38:15.0980605Z [command]/usr/bin/git version
+2025-10-21T20:38:15.1046965Z git version 2.51.0
+2025-10-21T20:38:15.1082783Z Temporarily overriding HOME='/home/runner/work/_temp/7ee2afaa-e518-4754-bc24-0e9e356b3baa' before making global git config changes
+2025-10-21T20:38:15.1088076Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-21T20:38:15.1089099Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/security-app-hse/security-app-hse
+2025-10-21T20:38:15.1123092Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-21T20:38:15.1154373Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-21T20:38:15.1376581Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-21T20:38:15.1398588Z http.https://github.com/.extraheader
+2025-10-21T20:38:15.1407973Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-10-21T20:38:15.1438577Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-21T20:38:15.1761191Z Cleaning up orphan processes

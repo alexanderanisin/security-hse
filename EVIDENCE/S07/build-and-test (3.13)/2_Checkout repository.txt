@@ -1,0 +1,69 @@
+﻿2025-10-21T20:37:58.5252287Z ##[group]Run actions/checkout@v5
+2025-10-21T20:37:58.5253239Z with:
+2025-10-21T20:37:58.5253727Z   repository: alexanderanisin/security-app-hse
+2025-10-21T20:37:58.5254500Z   token: ***
+2025-10-21T20:37:58.5254950Z   ssh-strict: true
+2025-10-21T20:37:58.5255354Z   ssh-user: git
+2025-10-21T20:37:58.5255773Z   persist-credentials: true
+2025-10-21T20:37:58.5256254Z   clean: true
+2025-10-21T20:37:58.5256670Z   sparse-checkout-cone-mode: true
+2025-10-21T20:37:58.5257183Z   fetch-depth: 1
+2025-10-21T20:37:58.5257618Z   fetch-tags: false
+2025-10-21T20:37:58.5258036Z   show-progress: true
+2025-10-21T20:37:58.5258468Z   lfs: false
+2025-10-21T20:37:58.5258844Z   submodules: false
+2025-10-21T20:37:58.5259260Z   set-safe-directory: true
+2025-10-21T20:37:58.5260246Z ##[endgroup]
+2025-10-21T20:37:58.6203368Z Syncing repository: alexanderanisin/security-app-hse
+2025-10-21T20:37:58.6205242Z ##[group]Getting Git version info
+2025-10-21T20:37:58.6206052Z Working directory is '/home/runner/work/security-app-hse/security-app-hse'
+2025-10-21T20:37:58.6207163Z [command]/usr/bin/git version
+2025-10-21T20:37:58.6293863Z git version 2.51.0
+2025-10-21T20:37:58.6346940Z ##[endgroup]
+2025-10-21T20:37:58.6360692Z Temporarily overriding HOME='/home/runner/work/_temp/fc4a7002-ebd9-4abf-b57b-9b7de69ae906' before making global git config changes
+2025-10-21T20:37:58.6362851Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-21T20:37:58.6366411Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/security-app-hse/security-app-hse
+2025-10-21T20:37:58.6402809Z Deleting the contents of '/home/runner/work/security-app-hse/security-app-hse'
+2025-10-21T20:37:58.6405961Z ##[group]Initializing the repository
+2025-10-21T20:37:58.6411184Z [command]/usr/bin/git init /home/runner/work/security-app-hse/security-app-hse
+2025-10-21T20:37:58.6516839Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-10-21T20:37:58.6518644Z hint: is subject to change. To configure the initial branch name to use in all
+2025-10-21T20:37:58.6519951Z hint: of your new repositories, which will suppress this warning, call:
+2025-10-21T20:37:58.6521301Z hint:
+2025-10-21T20:37:58.6522266Z hint: 	git config --global init.defaultBranch <name>
+2025-10-21T20:37:58.6523702Z hint:
+2025-10-21T20:37:58.6524962Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-10-21T20:37:58.6526922Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-10-21T20:37:58.6528551Z hint:
+2025-10-21T20:37:58.6529751Z hint: 	git branch -m <name>
+2025-10-21T20:37:58.6530896Z hint:
+2025-10-21T20:37:58.6532076Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-10-21T20:37:58.6534081Z Initialized empty Git repository in /home/runner/work/security-app-hse/security-app-hse/.git/
+2025-10-21T20:37:58.6537056Z [command]/usr/bin/git remote add origin https://github.com/alexanderanisin/security-app-hse
+2025-10-21T20:37:58.6572137Z ##[endgroup]
+2025-10-21T20:37:58.6573524Z ##[group]Disabling automatic garbage collection
+2025-10-21T20:37:58.6576333Z [command]/usr/bin/git config --local gc.auto 0
+2025-10-21T20:37:58.6603587Z ##[endgroup]
+2025-10-21T20:37:58.6604847Z ##[group]Setting up auth
+2025-10-21T20:37:58.6610614Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-21T20:37:58.6641275Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-21T20:37:58.6993532Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-21T20:37:58.7023979Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-21T20:37:58.7241101Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-10-21T20:37:58.7274861Z ##[endgroup]
+2025-10-21T20:37:58.7275600Z ##[group]Fetching the repository
+2025-10-21T20:37:58.7283799Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +8232ac2c838eb340c38ba26e05609f93fc038590:refs/remotes/origin/main
+2025-10-21T20:37:58.9216640Z From https://github.com/alexanderanisin/security-app-hse
+2025-10-21T20:37:58.9302723Z  * [new ref]         8232ac2c838eb340c38ba26e05609f93fc038590 -> origin/main
+2025-10-21T20:37:58.9305992Z ##[endgroup]
+2025-10-21T20:37:58.9307347Z ##[group]Determining the checkout info
+2025-10-21T20:37:58.9308819Z ##[endgroup]
+2025-10-21T20:37:58.9310184Z [command]/usr/bin/git sparse-checkout disable
+2025-10-21T20:37:58.9312875Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-10-21T20:37:58.9333887Z ##[group]Checking out the ref
+2025-10-21T20:37:58.9334857Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-10-21T20:37:58.9432296Z Switched to a new branch 'main'
+2025-10-21T20:37:58.9435324Z branch 'main' set up to track 'origin/main'.
+2025-10-21T20:37:58.9443192Z ##[endgroup]
+2025-10-21T20:37:58.9481508Z [command]/usr/bin/git log -1 --format=%H
+2025-10-21T20:37:58.9505626Z 8232ac2c838eb340c38ba26e05609f93fc038590

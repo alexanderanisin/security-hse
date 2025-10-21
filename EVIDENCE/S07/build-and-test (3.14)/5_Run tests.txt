@@ -1,0 +1,27 @@
+﻿2025-10-21T20:38:00.6065653Z ##[group]Run uv run pytest
+2025-10-21T20:38:00.6065933Z [36;1muv run pytest[0m
+2025-10-21T20:38:00.6097679Z shell: /usr/bin/bash -e {0}
+2025-10-21T20:38:00.6097904Z env:
+2025-10-21T20:38:00.6098063Z   UV_PYTHON: 3.14
+2025-10-21T20:38:00.6098300Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-10-21T20:38:00.6098734Z   DB_NAME: ***
+2025-10-21T20:38:00.6099070Z   JWT_SECRET_KEY: ***
+2025-10-21T20:38:00.6099263Z ##[endgroup]
+2025-10-21T20:38:03.4702274Z ============================= test session starts ==============================
+2025-10-21T20:38:03.4703143Z platform linux -- Python 3.14.0, pytest-8.4.2, pluggy-1.6.0
+2025-10-21T20:38:03.4703744Z rootdir: /home/runner/work/security-app-hse/security-app-hse
+2025-10-21T20:38:03.4704673Z configfile: pyproject.toml
+2025-10-21T20:38:03.4705037Z plugins: anyio-4.11.0, asyncio-1.2.0
+2025-10-21T20:38:03.4705694Z asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+2025-10-21T20:38:03.4706418Z collected 7 items
+2025-10-21T20:38:03.4706576Z 
+2025-10-21T20:38:03.5288711Z tests/test_health.py .                                                   [ 14%]
+2025-10-21T20:38:06.6384328Z tests/test_note.py ......                                                [100%]
+2025-10-21T20:38:06.6385282Z 
+2025-10-21T20:38:06.6385464Z =============================== warnings summary ===============================
+2025-10-21T20:38:06.6385884Z src/schemas.py:12
+2025-10-21T20:38:06.6388114Z   /home/runner/work/security-app-hse/security-app-hse/src/schemas.py:12: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+2025-10-21T20:38:06.6390184Z     class User(UserBase):
+2025-10-21T20:38:06.6390442Z 
+2025-10-21T20:38:06.6390778Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2025-10-21T20:38:06.6391496Z ========================= 7 passed, 1 warning in 3.02s =========================

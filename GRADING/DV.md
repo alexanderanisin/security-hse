@@ -1,16 +1,10 @@
 # DV - Мини-проект «DevOps-конвейер»
 
-> Этот файл - **индивидуальный**. Его проверяют по **rubric_DV.md** (5 критериев × {0/1/2} → 0-10).
-> Подсказки помечены `TODO:` - удалите после заполнения.
-> Все доказательства/скрины кладите в **EVIDENCE/** и ссылайтесь на конкретные файлы/якоря.
-
----
-
 ## 0) Мета
 
-- **Проект (опционально BYO):** TODO: ссылка / «учебный шаблон»
-- **Версия (commit/date):** TODO: abc123 / YYYY-MM-DD
-- **Кратко (1-2 предложения):** TODO: что именно собираем/тестируем/пакуем
+- **Проект:** [Заметки](https://github.com/alexanderanisin/security-app-hse)
+- **Версия (commit/date):** v.1 / 2025-10-21
+- **Кратко (1-2 предложения):** запускаем FastAPI приложение с SQLite и JWT-авторизацией для управления заметками
 
 ---
 
@@ -18,30 +12,52 @@
 
 - **Одна команда для сборки/тестов:**
 
-  ```bash
-  # TODO: замените на ваш one-liner
-  make build test
-  ```
+1. Выдайте разрешение на запуск файла, например, для Linux:
 
-  _Если без Makefile: укажите последовательность команд._
+    ```bash
+    chmod +x oneliner.sh
+    ```
+
+2. Запустите приложение
+
+Запуск на Linux/macOS
+
+```bash
+./oneliners/oneliner.sh
+```
+
+Запуск на Windows (через Powershell)
+
+```bash
+bash ./oneliners/winliner.sh
+```
+
+Запуск с помощью Docker Compose:
+
+```bash
+docker compose up --build
+```
 
 - **Версии инструментов (фиксация):**
 
   ```bash
-  # TODO: примеры - удалите лишнее
-  python --version
+  python --version # 3.14
   pip freeze > EVIDENCE/pip-freeze.txt
-  node --version
-  npm ci --version
   ```
 
-- **Описание шагов (кратко):** TODO: 2-4 пункта как запустить локально
+- **Описание шагов (кратко):**
+
+1. curl -LsSf https://astral.sh/uv/install.sh | sh
+2. uv sync --all-extras
+3. source .venv/bin/activate
+4. pytest -q
+5. uvicorn src.main:app --reload
 
 ---
 
 ## 2) Контейнеризация (DV2)
 
-- **Dockerfile:** TODO: `path/to/Dockerfile` (база, multi-stage? минимальный образ?)
+- **Dockerfile:** ./Dockerfile
 - **Сборка/запуск локально:**
 
   ```bash
@@ -49,116 +65,100 @@
   docker run --rm -p 8080:8080 app:local
   ```
 
-  _Укажите порт/команду/healthcheck, если есть._
+  Healthcheck есть: `/status/check_availability`
 
-- **(Опционально) docker-compose:** `TODO: path/to/docker-compose.yml` - кратко, какие сервисы.
+- **docker-compose:** `./docker-compose.yml` - 1 сервис, back-end приложения.
 
 ---
 
 ## 3) CI: базовый pipeline и стабильный прогон (DV3)
 
-- **Платформа CI:** TODO: GitHub Actions / GitLab CI / другое
-- **Файл конфига CI:** TODO: путь (напр., `.github/workflows/ci.yml`)
-- **Стадии (минимум):** checkout → deps → **build** → **test** → (package)
+- **Платформа CI:** GitHub Actions
+- **Файл конфига CI:** `.github/workflows/ci.yml`
+- [ ] Стадии (минимум):** checkout → deps → **build** → **test** → (package)
 - **Фрагмент конфигурации (ключевые шаги):**
 
   ```yaml
-  # TODO: укоротите под себя
-  jobs:
-  build_test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with: { python-version: '3.11' }
-      - name: Cache deps
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/pip
-          key: pip-${{ hashFiles('**/requirements*.txt') }}
-      - run: pip install -r requirements.txt
-      - run: pytest -q
+    name: CI Pipeline
 
+    on:
+      push:
+        branches: [ "main" ]
+      pull_request:
+        branches: [ "main" ]
+
+    jobs:
+      build-and-test:
+        runs-on: ubuntu-latest
+        strategy:
+          matrix:
+            python-version: ["3.13", "3.14"]
+
+        steps:
+          - name: Checkout repository
+            uses: actions/checkout@v5
+
+          - name: Install uv and set Python ${{ matrix.python-version }}
+            uses: astral-sh/setup-uv@v6
+            with:
+              python-version: ${{ matrix.python-version }}
+              enable-cache: true
+
+          - name: Install the project
+            run: uv sync --locked --all-extras --dev
+
+          - name: Run tests
+            env:
+              DB_NAME: ${{ secrets.DB_NAME }}
+              JWT_SECRET_KEY: ${{ secrets.JWT_SECRET_KEY }}
+            run: uv run pytest
+
+          - name: Build Docker image
+            run: docker build . --tag my-app:${{ github.sha }}
   ```
 
-- **Стабильность:** TODO: последние N запусков зелёные? краткий комментарий
-- **Ссылка/копия лога прогона:** `EVIDENCE/ci-YYYY-MM-DD-build.txt`
+- **Стабильность:** Да
+- **Ссылка/копия лога прогона:** `EVIDENCE/ci-2025-10-21-build-python-3-13.txt` и `EVIDENCE/ci-2025-10-21-build-python-3-14.txt`
 
 ---
 
 ## 4) Артефакты и логи конвейера (DV4)
 
-_Сложите файлы в `/EVIDENCE/` и подпишите их назначение._
-
-| Артефакт/лог                    | Путь в `EVIDENCE/`            | Комментарий                                  |
-|---------------------------------|-------------------------------|----------------------------------------------|
-| Лог успешной сборки/тестов (CI) | `ci-YYYY-MM-DD-build.txt`     | ключевые шаги/время                          |
-| Локальный лог сборки (опц.)     | `local-build-YYYY-MM-DD.txt`  | для сверки                                   |
-| Описание результата сборки      | `package-notes.txt`           | какой образ/wheel/архив получился            |
-| Freeze/версии инструментов      | `pip-freeze.txt` (или аналог) | воспроизводимость окружения                  |
+| Артефакт/лог                    | Путь в `EVIDENCE/`                                                                       | Комментарий                       |
+| ------------------------------- | ---------------------------------------------------------------------------------------- | --------------------------------- |
+| Лог успешной сборки/тестов (CI) | `ci-2025-10-21-build-python-3-13.txt`   и `EVIDENCE/ci-2025-10-21-build-python-3-14.txt` | ключевые шаги/время               |
+| Локальный лог сборки (опц.)     | `build.log`                                                             | для сверки                        |
+| Freeze/версии инструментов      | `pip-freeze.txt`                                                           | воспроизводимость окружения       |
 
 ---
 
 ## 5) Секреты и переменные окружения (DV5 - гигиена, без сканеров)
 
-- **Шаблон окружения:** добавлен файл `/.env.example` со списком переменных (без значений), например:
-  - `REG_USER=`
-  - `REG_PASS=`
-  - `API_TOKEN=`
+- **Шаблон окружения:** добавлен файл `/.env.example` со списком переменных
 - **Хранение и передача в CI:**  
   - секреты лежат в настройках репозитория/организации (**masked**),  
   - в pipeline они **не печатаются** в явном виде.
-- **Пример использования секрета в job (адаптируйте):**
-
-  ```yaml
-  - name: Login to registry (masked)
-    env:
-      REG_USER: ${{ secrets.REG_USER }}
-      REG_PASS: ${{ secrets.REG_PASS }}
-    run: |
-      echo "::add-mask::$REG_PASS"
-      echo "$REG_PASS" | docker login -u "$REG_USER" --password-stdin registry.example.com
-  ```
-
-- **Быстрая проверка отсутствия секретов в коде (любой простой способ):**
-
-  ```bash
-  # пример: поиск популярных паттернов
-  git grep -nE 'AKIA|SECRET|token=|password=' || true
-  ```
-
-  _Сохраните вывод в `EVIDENCE/grep-secrets.txt`._
-- **Памятка по ротации:** TODO: кто/как меняет secrets при утечке/ревоке токена.
+- **Памятка по ротации:** Секреты хранятся в GitHub Secrets. При утечке или компрометации, новый секрет должен быть сгенерирован и обновлен в настройках репозитория.
 
 ---
 
 ## 6) Индекс артефактов DV
 
-_Чтобы преподаватель быстро сверил файлы._
-
-| Тип     | Файл в `EVIDENCE/`            | Дата/время         | Коммит/версия | Runner/OS    |
-|---------|--------------------------------|--------------------|---------------|--------------|
-| CI-лог  | `ci-YYYY-MM-DD-build.txt`      | `YYYY-MM-DD hh:mm` | `abc123`      | `gha-ubuntu` |
-| Лок.лог | `local-build-YYYY-MM-DD.txt`   | …                  | `abc123`      | `local`      |
-| Package | `package-notes.txt`            | …                  | `abc123`      | -            |
-| Freeze  | `pip-freeze.txt` (или аналог)  | …                  | `abc123`      | -            |
-| Grep    | `grep-secrets.txt`             | …                  | `abc123`      | -            |
+| Тип     | Файл в `EVIDENCE/`                                                | Дата/время         | Коммит/версия | Runner/OS       |
+| ------- | ----------------------------------------------------------------- | ------------------ | ------------- | --------------- |
+| CI-лог  | `ci-YYYY-MM-DD-build.txt`                                         | `2025-10-21 23:38` | `8232ac2`     | `ubuntu-latest` |
+| Лок.лог | `local-build-YYYY-MM-DD.txt`                                      | `2025-10-21 23:38` | `8232ac2`     | `local`         |
+| Freeze  | `pip-freeze.txt`                                                  | `2025-10-21 23:38` | `8232ac2`     | -               |
+| Секреты | `secret.txt` или CI-лог сборки (секреты не утекают в логи сборки) | `2025-10-21 23:38` | `8232ac2`     | -               |
 
 ---
 
-## 7) Связь с TM и DS (hook)
+## 7) Самооценка по рубрике DV (0/1/2)
 
-- **TM:** этот конвейер обслуживает риски процесса сборки/поставки (например, культура работы с секретами, воспроизводимость).  
-- **DS:** сканы/гейты/триаж будут оформлены в `DS.md` с артефактами в `EVIDENCE/`.
+- **DV1. Воспроизводимость локальной сборки и тестов:** [ ] 0 [ ] 1 [x] 2  
+- **DV2. Контейнеризация (Docker/Compose):** [ ] 0 [ ] 1 [x] 2  
+- **DV3. CI: базовый pipeline и стабильный прогон:** [ ] 0 [ ] 1 [x] 2  
+- **DV4. Артефакты и логи конвейера:** [ ] 0 [ ] 1 [x] 2  
+- **DV5. Секреты и конфигурация окружения (гигиена):** [ ] 0 [ ] 1 [x] 2  
 
----
-
-## 8) Самооценка по рубрике DV (0/1/2)
-
-- **DV1. Воспроизводимость локальной сборки и тестов:** [ ] 0 [ ] 1 [ ] 2  
-- **DV2. Контейнеризация (Docker/Compose):** [ ] 0 [ ] 1 [ ] 2  
-- **DV3. CI: базовый pipeline и стабильный прогон:** [ ] 0 [ ] 1 [ ] 2  
-- **DV4. Артефакты и логи конвейера:** [ ] 0 [ ] 1 [ ] 2  
-- **DV5. Секреты и конфигурация окружения (гигиена):** [ ] 0 [ ] 1 [ ] 2  
-
-**Итог DV (сумма):** __/10
+**Итог DV (сумма):** 10/10
