@@ -32,7 +32,7 @@ Actions: https://github.com/alexanderanisin/security-hse-ds/actions/runs/1891507
 
 ---
 
-## 4) Харднинг (доказуемый) (DS4)
+## 4) Харднинг (DS4)
 
 S12 - IaC & Container Security: Hadolint (Dockerfile), Checkov (iac/), Trivy (image).
 Артефакты: EVIDENCE/S12/hadolint.json, EVIDENCE/S12/checkov.json, EVIDENCE/S12/trivy.json.
